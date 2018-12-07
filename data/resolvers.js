@@ -15,12 +15,10 @@ const resolvers = {
     }
   },
   Mutation: {
-    addTodo (_, args) {
+    addTodo (_, { title, completed }) {
       const { todos } = data
-      todos.push({
-        title: args.title,
-        completed: args.completed
-      })
+      todos.push({ title, completed })
+
       return todos[todos.length - 1]
     }
   }
