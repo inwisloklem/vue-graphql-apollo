@@ -1,11 +1,11 @@
-const { ApolloServer } = require('apollo-server')
-const mongoose = require('mongoose')
-require('dotenv').config({ path: 'variables.env' })
 const fs = require('fs')
 const path = require('path')
-
-const User = require('./models/User')
 const Post = require('./models/Post')
+const User = require('./models/User')
+const mongoose = require('mongoose')
+const { ApolloServer } = require('apollo-server')
+
+require('dotenv').config({ path: 'variables.env' })
 
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true })
   .then(() => console.log('DB connected.'))
